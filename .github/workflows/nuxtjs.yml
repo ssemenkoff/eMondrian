@@ -40,9 +40,9 @@ jobs:
           node-version: "16"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Install dependencies
-        run: npm ci
+        run: npm i
       - name: Static HTML export with Nuxt
-        run: ${{ steps.detect-package-manager.outputs.manager }} run generate
+        run: npm run generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
